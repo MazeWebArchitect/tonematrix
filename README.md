@@ -1,10 +1,6 @@
-# typescript / sass
-template repository for my typescript projects
+# TONEMATRIX
+![alt screenshot](tonematrix.jpg)
 
-Make sure to have sass installed and run in the console:
+[PLAY!](https://andremichelle.github.io/tonematrix/) | [Audiotool Origin](https://tonematrix.audiotool.com/)
 
-    sass sass/main.sass:bin/main.css --watch
-
-Make sure to have typescript installed and run in the console:
-
-    tsc -p ./typescript/tsconfig.json --watch
+Simplified version. No frameworks. No libraries. Tested on Chrome, Firefox, Safari. Desktop & IOS.

@@ -1,8 +1,5 @@
-$color: #eaeaea
-$background-color: #1A1A1A
-
-\:root
-  --size: min(1vw, 1vh)
+$color: #2A2A2A
+$background-color: black
 
 html, body
   margin: 0
@@ -28,8 +25,6 @@ body
   /* mobile viewport bug fix */
   min-width: -webkit-fill-available
   min-height: -webkit-fill-available
-  border-radius: 64px
-  background-color: rgba(0, 255, 0, 0.2)
 
 *
   user-select: none
@@ -44,17 +39,3 @@ body
 
 .invisible
   visibility: hidden !important
-
-svg.preloader
-  --percentage: 0.0
-  --radius: 7
-
-  width: 64px
-  height: 64px
-
-  &.error circle
-    stroke: #C30
-
-  > circle.progress
-    stroke-dasharray: calc(var(--radius) * 6.2831853)
-    stroke-dashoffset: calc(var(--radius) * 6.2831853 * (1.0 - var(--percentage)))
