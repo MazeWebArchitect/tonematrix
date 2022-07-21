@@ -2,13 +2,6 @@ import {Model} from "./tonematrix/model.js"
 import {View} from "./tonematrix/view.js"
 import {Audio} from "./tonematrix/audio.js"
 
-const showProgress = (() => {
-    const progress: SVGSVGElement = document.querySelector("svg.preloader")
-    window.onerror = () => progress.classList.add("error")
-    window.onunhandledrejection = () => progress.classList.add("error")
-    return (percentage: number) => progress.style.setProperty("--percentage", percentage.toFixed(2))
-})()
-
 class ToneMatrix {
     readonly model: Model = new Model()
     readonly view: View = new View(this.model, this.canvas)

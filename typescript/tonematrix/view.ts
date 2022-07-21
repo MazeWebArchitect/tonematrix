@@ -1,5 +1,5 @@
-import {Model} from "./model.js"
 import {ArrayUtils} from "../lib/common.js"
+import {Model} from "./model.js"
 
 export class View {
     private readonly graphics: CanvasRenderingContext2D = this.canvas.getContext("2d")
@@ -56,14 +56,13 @@ export class View {
         this.canvas.addEventListener("touchstart", listener)
         this.canvas.addEventListener("mousemove", listener)
         this.canvas.addEventListener("touchmove", listener)
-        const onClearListener = event => {
-            event.preventDefault()
-            if (event.target !== this.canvas) {
-                this.model.pattern.clear()
+        window.addEventListener("pointerdown", event => {
+            if (event.target instanceof HTMLButtonElement || event.target === this.canvas) {
+                return
             }
-        }
-        window.addEventListener("touchstart", onClearListener, {capture: true})
-        window.addEventListener("mousedown", onClearListener, {capture: true})
+            this.model.pattern.clear()
+            event.preventDefault()
+        }, {capture: false})
         window.addEventListener("keydown", event => {
             if (event.code === "Space") {
                 this.model.pattern.clear()

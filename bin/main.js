@@ -10,12 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Model } from "./tonematrix/model.js";
 import { View } from "./tonematrix/view.js";
 import { Audio } from "./tonematrix/audio.js";
-const showProgress = (() => {
-    const progress = document.querySelector("svg.preloader");
-    window.onerror = () => progress.classList.add("error");
-    window.onunhandledrejection = () => progress.classList.add("error");
-    return (percentage) => progress.style.setProperty("--percentage", percentage.toFixed(2));
-})();
 class ToneMatrix {
     constructor(canvas) {
         this.canvas = canvas;

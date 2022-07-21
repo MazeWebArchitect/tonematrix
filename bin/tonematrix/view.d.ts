@@ -18,7 +18,7 @@ export declare class View {
     private processAnimationFrame;
     private touchActives;
     private processFluid;
-    readonly domElement: HTMLCanvasElement;
+    get domElement(): HTMLCanvasElement;
     private static createStepTexture;
     private static create2dContext;
 }
